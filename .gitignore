@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.DS_Store
+cache/*
+!cache/overfit-emnist-caption-embeds/
+!cache/overfit-emnist-caption-embeds/**
+!cache/overfit-emnist-vae-latents/
+!cache/overfit-emnist-vae-latents/**
+checkpoints/
+outputs/
+models/
+*.egg-info/

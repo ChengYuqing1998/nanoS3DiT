@@ -1,0 +1,21 @@
+conda create -n nano-s3dit python=3.12 -y
+
+conda activate nano-s3dit
+
+pip install -r requirements.txt
+
+hf version
+
+mkdir -p models
+
+hf download Qwen/Qwen3-0.6B --local-dir models/qwen3-0_6b
+
+mkdir -p models/z-image-download
+
+hf download Tongyi-MAI/Z-Image-Turbo vae/config.json vae/diffusion_pytorch_model.safetensors --local-dir models/z-image-download
+
+mkdir -p models/z-image-vae
+
+cp models/z-image-download/vae/config.json models/z-image-vae/config.json
+
+cp models/z-image-download/vae/diffusion_pytorch_model.safetensors models/z-image-vae/diffusion_pytorch_model.safetensors

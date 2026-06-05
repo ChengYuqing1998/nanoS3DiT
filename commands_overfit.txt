@@ -1,0 +1,9 @@
+PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True python scripts/train.py --config configs/nano-s3dit-overfit-176m.toml --device cuda
+
+python scripts/infer.py --config configs/nano-s3dit-overfit-176m.toml --checkpoint checkpoints/nano-s3dit-overfit-176m/checkpoint-002000.pt --prompt "A" --height 128 --width 128 --steps 50 --guidance-scale 0.0 --seed 42 --output outputs/overfit-A-step2000.png
+
+python scripts/infer.py --config configs/nano-s3dit-overfit-176m.toml --checkpoint checkpoints/nano-s3dit-overfit-176m/checkpoint-002000.pt --prompt "a" --height 128 --width 128 --steps 50 --guidance-scale 0.0 --seed 42 --output outputs/overfit-a-step2000.png
+
+python scripts/cache_text_embeddings.py --data-dir data/overfit-emnist-byclass-one-per-class --model models/qwen3-0_6b --model-layout causal-lm --quantization none --dtype bf16 --batch-size 52 --output-dir cache/overfit-emnist-caption-embeds/text-embeds-qwen3-0_6b-bf16
+
+python scripts/cache_vae_latents.py --caption-embeds-dir cache/overfit-emnist-caption-embeds/text-embeds-qwen3-0_6b-bf16 --vae models/z-image-vae --output-dir cache/overfit-emnist-vae-latents/z-image-vae-128-bf16 --bucket-max-pixels 16384 --bucket-min-side 128 --bucket-max-side 128 --bucket-step 16 --batch-size 52 --dtype bf16 --device cuda

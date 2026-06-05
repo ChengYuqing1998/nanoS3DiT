@@ -1,0 +1,13 @@
+{
+  "data_dir": "data/overfit-emnist-byclass-one-per-class",
+  "project_relative_data_dir": "data/overfit-emnist-byclass-one-per-class",
+  "model": "models/qwen3-0_6b",
+  "model_layout": "causal-lm",
+  "quantization": "none",
+  "compute_dtype": "bf16",
+  "max_length": 512,
+  "batch_size": 52,
+  "hidden_state_layer": -2,
+  "include_thinking": true,
+  "num_samples": 52
+}

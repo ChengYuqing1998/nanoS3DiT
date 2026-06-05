@@ -1,0 +1,25 @@
+{
+  "caption_embeds_dir": "cache/overfit-emnist-caption-embeds/text-embeds-qwen3-0_6b-bf16",
+  "project_relative_caption_embeds_dir": "cache/overfit-emnist-caption-embeds/text-embeds-qwen3-0_6b-bf16",
+  "vae": "models/z-image-vae",
+  "project_relative_vae": "models/z-image-vae",
+  "output_dir": "cache/overfit-emnist-vae-latents/z-image-vae-128-bf16",
+  "project_relative_output_dir": "cache/overfit-emnist-vae-latents/z-image-vae-128-bf16",
+  "bucket_mode": "aspect-ratio",
+  "bucket_max_pixels": 16384,
+  "bucket_min_side": 128,
+  "bucket_max_side": 128,
+  "bucket_step": 16,
+  "bucket_count": 1,
+  "bucket_distribution": {
+    "128x128": 52
+  },
+  "resize_mode": "aspect-ratio-bucket-center-crop",
+  "batch_size": 52,
+  "dtype": "bf16",
+  "posterior": "mode",
+  "latent_scaling": "(raw_latent - shift_factor) * scaling_factor",
+  "scaling_factor": 0.3611,
+  "shift_factor": 0.1159,
+  "num_samples": 52
+}
