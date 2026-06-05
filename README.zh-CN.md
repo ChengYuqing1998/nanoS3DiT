@@ -2,7 +2,7 @@
 
 # nano-S3-DiT
 
-`nano-S3-DiT` 是一个精简的纯 PyTorch S3DiT 与 flow matching 训练项目。Diffusion Transformer、训练循环和 Euler sampler 都直接实现在本仓库中，不依赖 Flow-Factory。
+`nano-S3-DiT` 是一个精简的纯 PyTorch S3DiT 与 flow matching 训练项目。Diffusion Transformer、训练循环和 Euler sampler 都直接实现在本仓库中。
 
 仓库内置一个 52 张图的 EMNIST overfit 数据集，每个 `A-Z` 和 `a-z` 类别各 1 张，用来验证完整链路。对应的 Qwen caption embeddings 和 Z-Image VAE latents 已经预处理并提交到 `cache/`，创建环境后可以直接运行训练，不需要先下载模型或执行缓存脚本。
 

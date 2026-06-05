@@ -2,7 +2,7 @@
 
 # nano-S3-DiT
 
-`nano-S3-DiT` is a compact, pure-PyTorch S3DiT and flow-matching training project. It implements the diffusion transformer, training loop, and Euler sampler directly in this repository, without requiring Flow-Factory.
+`nano-S3-DiT` is a compact, pure-PyTorch S3DiT and flow-matching training project. It implements the diffusion transformer, training loop, and Euler sampler directly in this repository.
 
 The repo includes a 52-sample EMNIST overfit dataset: one image for every `A-Z` and `a-z` class. Its Qwen caption embeddings and Z-Image VAE latents are already preprocessed under `cache/`, so training can start immediately after creating the environment.
 
