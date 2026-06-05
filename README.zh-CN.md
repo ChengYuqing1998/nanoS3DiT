@@ -1,14 +1,14 @@
 [English](README.md) | [中文](README.zh-CN.md)
 
-# nano-s3dit
+# nano-S3-DiT
 
-`nano-s3dit` 是一个精简的纯 PyTorch S3DiT 与 flow matching 训练项目。Diffusion Transformer、训练循环和 Euler sampler 都直接实现在本仓库中，不依赖 Flow-Factory。
+`nano-S3-DiT` 是一个精简的纯 PyTorch S3DiT 与 flow matching 训练项目。Diffusion Transformer、训练循环和 Euler sampler 都直接实现在本仓库中，不依赖 Flow-Factory。
 
 仓库内置一个 52 张图的 EMNIST overfit 数据集，每个 `A-Z` 和 `a-z` 类别各 1 张，用来验证完整链路。对应的 Qwen caption embeddings 和 Z-Image VAE latents 已经预处理并提交到 `cache/`，创建环境后可以直接运行训练，不需要先下载模型或执行缓存脚本。
 
 ## 什么是 S3DiT？
 
-S3DiT 指 **Single-Stream Diffusion Transformer（单流扩散 Transformer）**。它不使用相互独立的文本和图像 Transformer 分支，而是将文本 embedding 与图像 latent patch 投影到同一个 token 序列中，通过共享的 self-attention block 联合建模，并将 diffusion timestep 作为自适应条件注入网络。
+S3DiT 指 **Scalable Single-Stream Diffusion Transformer（可扩展单流扩散 Transformer）**。它不使用相互独立的文本和图像 Transformer 分支，而是将文本 embedding 与图像 latent patch 投影到同一个 token 序列中，通过共享的 self-attention block 联合建模，并将 diffusion timestep 作为自适应条件注入网络。
 
 本仓库是一个用于学习和实验的小型实现，重点是让核心数据流便于阅读、修改和训练。
 

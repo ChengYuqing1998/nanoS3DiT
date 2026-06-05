@@ -1,14 +1,14 @@
 [English](README.md) | [中文](README.zh-CN.md)
 
-# nano-s3dit
+# nano-S3-DiT
 
-`nano-s3dit` is a compact, pure-PyTorch S3DiT and flow-matching training project. It implements the diffusion transformer, training loop, and Euler sampler directly in this repository, without requiring Flow-Factory.
+`nano-S3-DiT` is a compact, pure-PyTorch S3DiT and flow-matching training project. It implements the diffusion transformer, training loop, and Euler sampler directly in this repository, without requiring Flow-Factory.
 
 The repo includes a 52-sample EMNIST overfit dataset: one image for every `A-Z` and `a-z` class. Its Qwen caption embeddings and Z-Image VAE latents are already preprocessed under `cache/`, so training can start immediately after creating the environment.
 
 ## What is S3DiT?
 
-S3DiT is a **Single-Stream Diffusion Transformer** architecture. Instead of processing text and image features in separate transformer branches, it projects text embeddings and image latent patches into one token sequence and lets them interact through shared self-attention blocks. The diffusion timestep is injected as adaptive conditioning.
+S3DiT is a **Scalable Single-Stream Diffusion Transformer** architecture. Instead of processing text and image features in separate transformer branches, it projects text embeddings and image latent patches into one token sequence and lets them interact through shared self-attention blocks. The diffusion timestep is injected as adaptive conditioning.
 
 This repository is a small educational implementation intended to make that core data flow easy to inspect, modify, and train.
 
